@@ -14,7 +14,7 @@ class Random
      * @param int $numeric
      * @return string 随机字符串
      */
-    public function random(int $length, int $numeric = 0): string
+    public static function random(int $length, int $numeric = 0): string
     {
         //生成若干位随机字符串
         $seed = base_convert(md5(microtime() . $_SERVER['DOCUMENT_ROOT']), 16, $numeric ? 10 : 35);
@@ -36,7 +36,7 @@ class Random
      * @param int $type 0为大小写均有，1为仅大写，2为仅小写
      * @return string 随机字符串
      */
-    public function get_rand_str(int $len = 12, int $type = 0): string
+    public static function get_rand_str(int $len = 12, int $type = 0): string
     {
         $str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $str_len = strlen($str);
@@ -59,7 +59,7 @@ class Random
      * @param int $len 需要的长度
      * @return string 生成的字符串
      */
-    public function get_num(int $len = 8): string
+    public static function get_num(int $len = 8): string
     {
         $str = '0123456789';
         $str_len = strlen($str);
