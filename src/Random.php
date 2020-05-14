@@ -17,7 +17,7 @@ class Random
     public static function random(int $length, int $numeric = 0): string
     {
         //生成若干位随机字符串
-        $seed = base_convert(md5(microtime() . mt_rand(100000, 999999), 16, $numeric ? 10 : 35);
+        $seed = base_convert(md5(microtime() . mt_rand(100000, 999999)), 16, $numeric ? 10 : 35);
         $seed = $numeric ? (str_replace('0', '', $seed) . '012340567890') : ($seed . 'zZ' . strtoupper($seed));
         $hash = '';
         $max = strlen($seed) - 1;
